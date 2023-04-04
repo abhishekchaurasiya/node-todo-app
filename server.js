@@ -12,7 +12,7 @@ const app = express();
 connectdb()
 
 app.get("/",(req,res)=>{
-    res.send("Nice working")
+    res.send("Nice working this api")
 })
 
 app.use(express.json());
