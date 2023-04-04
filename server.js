@@ -29,7 +29,7 @@ const start = async () => {
     try {
         app.listen(APP_PORT, () => {
             console.log(`Server is running at port ${APP_PORT} in ${Node_Env} Mode`)
-        })
+        })  
     } catch (error) {
         console.log(error.message)
     }
