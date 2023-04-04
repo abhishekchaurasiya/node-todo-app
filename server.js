@@ -11,6 +11,10 @@ const app = express();
 // database connected
 connectdb()
 
+app.get("/",(req,res)=>{
+    res.send("Nice working")
+})
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
@@ -19,6 +23,8 @@ app.use(cors({
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
 }))
+
+
 
 app.use("/api/v1/users", userRouter)
 app.use("/api/v1/task", taskRouter)
