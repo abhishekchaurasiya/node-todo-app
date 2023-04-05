@@ -11,7 +11,7 @@ const app = express();
 // database connected
 connectdb()
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("Deploye the backend code in the server")
 })
 
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 app.use(cors({
-    // origin: process.env.FrontEnd_URL,
+    origin: process.env.FrontEnd_URL,
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
 }))
@@ -35,7 +35,7 @@ const start = async () => {
     try {
         app.listen(APP_PORT, () => {
             console.log(`Server is running at port ${APP_PORT} in ${Node_Env} Mode`)
-        })  
+        })
     } catch (error) {
         console.log(error.message)
     }
