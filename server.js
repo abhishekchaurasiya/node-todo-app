@@ -1,6 +1,6 @@
 const express = require("express");
 const { connectdb } = require("./db/db")
-const { APP_PORT } = require("./config/index");
+const { APP_PORT, FRONTEND_URL } = require("./config/index");
 const cors = require("cors")
 const cookieParser = require("cookie-parser")
 const userRouter = require("./router/routes")
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 app.use(cors({
-    origin: process.env.FrontEnd_URL,
+    origin: FRONTEND_URL,
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
 }))
