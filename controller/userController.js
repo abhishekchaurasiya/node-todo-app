@@ -84,7 +84,6 @@ const logout = async (req, res, next) => {
 
 
 const getMyProfile = (req, res, next) => {
-    console.log(req.user)
     try {
         res.status(200).json({
             success: true,

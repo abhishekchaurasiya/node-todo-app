@@ -32,7 +32,7 @@ const newTask = async (req, res, next) => {
     res.status(201).json({
         success: true,
         message: "Task added successfully",
-        task: task
+        tasks: task
     })
 };
 
@@ -43,7 +43,7 @@ const getMyTask = async (req, res, next) => {
     try {
         const tasks = await Task.find({ user: userid })
 
-        if (tasks.length === 0) return res.status(404).json({ status: false, task: "Task not found!" })
+        if (tasks.length === 0) return res.status(404).json({ status: false, tasks: "Task not found!" })
 
         res.status(200).json({ status: true, tasks })
     } catch (error) {
